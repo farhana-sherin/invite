@@ -1,0 +1,205 @@
+:root {
+  --color-cream: #fbf9f4;
+  --color-cream-dark: #f0ebe1;
+  --color-gold: #c5a059;
+  --color-gold-light: #dfc48c;
+  --color-dark: #2c2825;
+  --color-text: #4a4238;
+  --color-text-light: #7b7163;
+  
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-cursive: 'Great Vibes', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-gold-light); /* Darker backdrop to make card pop */
+  color: var(--color-text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Texture */
+.bg-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('/gold-foil.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Global Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+}
+
+.gold-text {
+  color: var(--color-gold);
+}
+
+.cursive-text {
+  font-family: var(--font-cursive);
+  font-size: 2.8rem;
+  color: var(--color-gold);
+}
+
+/* Single Card Unified Layout */
+.invitation-card {
+  background: var(--color-cream);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.greeting-container {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.guest-greeting {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.greeting-subtext {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.card-image-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+}
+
+.template-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Base button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+  position: relative;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-gold);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.btn-secondary:hover {
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.input-field:focus {
+  border-color: var(--color-gold);
+}
+
+/* Layout Utilities */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.content-wrapper {
+  max-width: 450px;
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--color-gold);
+}
+.divider::before, .divider::after {
+  content: "";
+  height: 1px;
+  background: var(--color-gold);
+  width: 40px;
+  opacity: 0.5;
+}
+
+/* Remove glass styling since it's one card now */
+section {
+  position: relative;
+  z-index: 2;
+}
