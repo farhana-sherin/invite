@@ -14,13 +14,12 @@ function App() {
     }
   }, []);
 
-  // Main container animation variants
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, staggerChildren: 0.2 }
+      transition: { duration: 0.8, staggerChildren: 0.15 }
     }
   };
 
@@ -31,7 +30,6 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Background Texture Element */}
       <div className="bg-texture"></div>
 
       <motion.div 
@@ -40,19 +38,47 @@ function App() {
         animate="visible"
       >
         <motion.div variants={containerVariants} className="invitation-card">
+          <div className="arch-border-inner">
+            <div className="arch-border-outline"></div>
+          </div>
           
-          <motion.div variants={itemVariants} className="greeting-container">
-            <h2 className="cursive-text guest-greeting">
-              {guestName ? `Dear ${guestName},` : 'Dear Guest,'}
-            </h2>
-            <p className="greeting-subtext">
-              You are joyfully invited.
-            </p>
+          <motion.div variants={itemVariants} className="bismillah-container">
+             <h2 className="bismillah-text">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="card-image-container">
-            {/* Using the template image. Placed in public/template.jpg */}
-            <img src="/template.jpg" alt="Wedding Invitation Card" className="template-image" />
+          <motion.div variants={itemVariants} className="intro-text">
+            <p>With the blessings of Almighty Allah <br/> and our beloved parents,</p>
+            <p className="invite-label">We cordially invite you to</p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="event-title-container">
+            <h3 className="event-title">Wedding Ceremony</h3>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="stars-divider">
+             ✦ <span className="star-sm">✧</span> ✦
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="couple-names-container">
+            <h1 className="couple-name">Farhana Sherin</h1>
+            <span className="ampersand">&</span>
+            <h1 className="couple-name">Mohammed Faez</h1>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="datetime-container">
+            <div className="date-block">
+              <span className="day">Sun</span> | <span className="date-num">31</span> | <span className="month">May</span>
+            </div>
+            <p className="time-text">From 10:00 AM</p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="venue-container">
+            <p className="venue-name">Obron Convention Center,</p>
+            <p className="venue-location">CK Para, Valanchery</p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="stars-divider">
+             ✦ <span className="star-sm">✧</span> ✦
           </motion.div>
           
           <Share initialGuestName={guestName} />
