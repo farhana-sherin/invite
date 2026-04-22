@@ -31,9 +31,9 @@ const Hero = ({ guestName }) => {
         </h3>
 
         <h1 className="cursive-text" style={{ margin: '20px 0', lineHeight: 1 }}>
-          <span style={{ display: 'block', color: 'var(--color-gold)', textShadow: '0 1px 0 rgba(255,255,255,0.8)' }}>Farhana Sherin</span>
-          <span style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)', color: 'var(--color-gold-light)', display: 'block', margin: '15px 0' }}>&</span>
           <span style={{ display: 'block', color: 'var(--color-gold)', textShadow: '0 1px 0 rgba(255,255,255,0.8)' }}>Mohammed Faez</span>
+          <span style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)', color: 'var(--color-gold-light)', display: 'block', margin: '15px 0' }}>&</span>
+          <span style={{ display: 'block', color: 'var(--color-gold)', textShadow: '0 1px 0 rgba(255,255,255,0.8)' }}>Farhana Sherin</span>
         </h1>
       </motion.div>
 

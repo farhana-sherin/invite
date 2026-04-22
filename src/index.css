@@ -54,9 +54,9 @@ h1, h2, h3, h4 {
 
 .cursive-text {
   font-family: var(--font-cursive);
-  font-size: 3.8rem;
-  font-weight: 700;
-  -webkit-text-stroke: 1px var(--color-gold); /* Fakes thicker bold for cursive font */
+  font-size: clamp(2.4rem, 10vw, 3.4rem);
+  font-weight: 400; /* Regular weight */
+  -webkit-text-stroke: 0.3px var(--color-gold); /* Subtle stroke instead of heavy bold */
   color: var(--color-gold);
 }
 
