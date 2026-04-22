@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Share2, Check } from 'lucide-react';
 
 const Share = ({ initialGuestName }) => {
+  // Allow user to set a dynamic name for sharing
   const [recipientName, setRecipientName] = useState(initialGuestName || '');
   const [copied, setCopied] = useState(false);
 
@@ -45,28 +46,29 @@ const Share = ({ initialGuestName }) => {
   return (
     <motion.section 
       variants={itemVariants}
-      className="share-section"
-      style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '15px', zIndex: 10, position: 'relative' }}
+      style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '15px' }}
     >
+      <h3 style={{ fontSize: '1.2rem', marginBottom: '0px', color: 'var(--color-gold)' }}>Invite Others</h3>
       <p style={{ opacity: 0.8, fontSize: '0.85rem', marginBottom: '5px' }}>
-        Create a personalized invite link:
+        Generate a personalized link to share.
       </p>
 
+      {/* Input to change the name dynamically for the link */}
       <input 
         type="text" 
         className="input-field" 
         placeholder="Enter recipient's name"
         value={recipientName}
         onChange={(e) => setRecipientName(e.target.value)}
-        style={{ textAlign: 'center', background: 'rgba(255, 255, 255, 0.4)' }}
+        style={{ textAlign: 'center', background: 'transparent' }}
       />
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center', marginTop: '10px' }}>
-        <button className="btn-primary" onClick={handleShare} style={{ width: '100%', justifyContent: 'center' }}>
+        <button className="btn-primary" onClick={handleShare} style={{ width: '80%', justifyContent: 'center' }}>
           <Share2 size={16} /> Share on WhatsApp
         </button>
 
-        <button className="btn-secondary" onClick={copyLink} style={{ width: '100%', border: 'none' }}>
+        <button className="btn-secondary" onClick={copyLink} style={{ width: '80%', border: 'none' }}>
           {copied ? <><Check size={16} style={{marginRight: '8px'}} /> Copied!</> : 'Copy Link'}
         </button>
       </div>
